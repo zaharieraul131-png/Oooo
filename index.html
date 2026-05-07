@@ -282,10 +282,20 @@
   .chev { font-size: .9rem; color: var(--blue); transition: transform .3s; margin-top: 4px; flex-shrink: 0; }
   .chev.o { transform: rotate(180deg); }
 
-  .rb { max-height: 0; overflow: hidden; transition: max-height .5s cubic-bezier(.4,0,.2,1); }
-  .rb.o { max-height: 3000px; }
+  .rb{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .4s ease;
+}
 
-  .ri { padding: 0 20px 20px; border-top: 1px solid rgba(255,255,255,.5); }
+.rb.o{
+  grid-template-rows:1fr;
+}
+
+.ri{
+  overflow:hidden;
+}
+  
   .st { font-size: .66rem; text-transform: uppercase; letter-spacing: .18em; color: var(--hint); font-weight: 500; margin: 16px 0 8px; }
 
   .il { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; }
